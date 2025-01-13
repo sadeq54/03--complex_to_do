@@ -8,6 +8,7 @@ export default function Auth() {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState(null);
+  
 
   // using cookies to store the email and the tokens
   const [Cookie, setCookie , removeCookie] = useCookies(null)
@@ -36,6 +37,7 @@ export default function Auth() {
       }
     );
     const data = await response.json();
+    // the check here is vallurable
     if (data.detail) {
         setError(data.detail);
       }
